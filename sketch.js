@@ -9,7 +9,7 @@ function preload() {
   backgroundImage = loadImage("planodefundo.png");
   car1_img = loadImage("car1.png");
   car2_img = loadImage("car2.png");
-  track = loadImage("pista.png");
+  track = loadImage("track.png");
 }
 
 function setup() {
