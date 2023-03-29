@@ -26,7 +26,7 @@ class Form {
     this.input.hide();
   }
 
-  handleMousePressed() {
+  botaoClicou() {
     this.playButton.mousePressed(() => {
       this.input.hide();
       this.playButton.hide();
@@ -35,8 +35,8 @@ class Form {
       </br>espere o outro jogador entrar...`;
       this.greeting.html(message);
       playerCount += 1;
-      player.name = this.input.value();
-      player.index = playerCount;
+      player.nome = this.input.value();
+      player.indice = playerCount;
       player.addPlayer();
       player.updateCount(playerCount);
       player.getDistance();
@@ -46,6 +46,6 @@ class Form {
   display() {
     this.setElementsPosition();
     this.setElementsStyle();
-    this.handleMousePressed();
+    this.botaoClicou();
   }
 }

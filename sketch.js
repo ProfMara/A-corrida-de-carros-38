@@ -24,6 +24,8 @@ function draw() {
   background(backgroundImage);
   if (playerCount === 2) {
     game.update(1);
+  }
+  if(gameState==1){
     game.play();
   }
 }

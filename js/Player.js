@@ -1,33 +1,33 @@
 class Player {
   constructor() {
-    this.name = null;
-    this.index = null;
-    this.positionX = 0;
-    this.positionY = 0;
+    this.nome = null;
+    this.indice = null;
+    this.posX = 0;
+    this.posY = 0;
   }
 
   addPlayer() {
-    var playerIndex = "players/player" + this.index;
+    var playerindice = "players/player" + this.indice;
 
-    if (this.index === 1) {
-      this.positionX = width / 2 - 100;
+    if (this.indice === 1) {
+      this.posX = width / 2 - 100;
     } else {
-      this.positionX = width / 2 + 100;
+      this.posX = width / 2 + 100;
     }
 
-    database.ref(playerIndex).set({
-      name: this.name,
-      positionX: this.positionX,
-      positionY: this.positionY,
+    database.ref(playerindice).set({
+      nome: this.nome,
+      posX: this.posX,
+      posY: this.posY,
     });
   }
 
   getDistance() {
-    var playerDistanceRef = database.ref("players/player" + this.index);
+    var playerDistanceRef = database.ref("players/player" + this.indice);
     playerDistanceRef.on("value", data => {
       var data = data.val();
-      this.positionX = data.positionX;
-      this.positionY = data.positionY;
+      this.posX = data.posX;
+      this.posY = data.posY;
     });
   }
 
@@ -45,10 +45,10 @@ class Player {
   }
 
     update(){
-      var playerRef = database.ref("players/player"+this.index);
+      var playerRef = database.ref("players/player"+this.indice);
       playerRef.update({
-        positionX:this.positionX,
-        positionY:this.positionY
+        posX:this.posX,
+        posY:this.posY
       })
 
     }
